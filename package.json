@@ -1,0 +1,49 @@
+{
+  "name": "retracedtask",
+  "version": "1.0.0",
+  "description": "Retraced task",
+  "main": "./dist/index.js",
+  "author": "Ikechukwu Apeh",
+  "license": "ISC",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json src/index.ts",
+    "postinstall": "tsc",
+    "start": "node ./dist/index.js",
+    "build": "rimraf ./dist && tsc",
+    "docker": "./start.sh",
+    "preci": "rm -fr node_modules",
+    "ci": "yarn install --frozen-lockfile",
+    "lint": "npm run lint:js ",
+    "lint:eslint": "eslint --ignore-path .gitignore --ext .ts",
+    "lint:js": "npm run lint:eslint src/",
+    "lint:fix": "npm run lint:js -- --fix",
+    "protoc": "./scripts/protoc.sh",
+    "snyk-protect": "snyk protect",
+    "test": "mocha -r ts-node/register 'src/tests/**/*.test.ts' --timeout 60000"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./src/test/setup.ts"
+    ]
+  },
+  "keywords": [],
+  "dependencies": {
+    "@types/express": "^4.17.11",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "sqlite3": "^5.0.8",
+    "streamifier": "^0.1.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.2"
+  },
+  "engines": {
+    "node": "14.0.0"
+  }
+}
