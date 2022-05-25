@@ -18,10 +18,10 @@ npm run start
 ### The endpoints are in the postman collection in this project
 
 # To Build the image on docker run the code from the root directory
-'docker build -t retraced .'
+docker build -t retraced .
 
 # To run the container from the built image, run the code from the root directory
-'docker-compose up'
+docker-compose up
 
 # To access the endpoint, send a get request to
 http://localhost:3000/api/categories
