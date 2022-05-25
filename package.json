@@ -19,14 +19,7 @@
     "lint:fix": "npm run lint:js -- --fix",
     "protoc": "./scripts/protoc.sh",
     "snyk-protect": "snyk protect",
-    "test": "mocha -r ts-node/register 'src/tests/**/*.test.ts' --timeout 60000"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "setupFilesAfterEnv": [
-      "./src/test/setup.ts"
-    ]
+    "test": "jest"
   },
   "keywords": [],
   "dependencies": {
@@ -41,7 +34,14 @@
     "typescript": "^4.2.4"
   },
   "devDependencies": {
-    "@types/node": "^16.9.2"
+    "@babel/preset-env": "^7.14.7",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.9.2",
+    "@types/supertest": "^2.0.12",
+    "jest": "^27.5.1",
+    "supertest": "^6.2.3",
+    "ts-jest": "^28.0.3",
+    "typescript": "^4.3.4"
   },
   "engines": {
     "node": "14.0.0"
