@@ -19,7 +19,9 @@ class Category {
 
     } else {
       let categoryWithId = await categoryRepository.getCategoryById(id);
-
+      if (categoryWithId == undefined) {
+       return res.json("Parent ID does not exist")
+      }
       var returner = JSON.parse(JSON.stringify(makeTree(foundCollections, id)));
 
       let newObject = new ResponseDto();
