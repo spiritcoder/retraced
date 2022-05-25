@@ -1,7 +1,7 @@
 import {app} from '../app'
 import supertest from 'supertest'
 
-describe('API integration test', () => {
+describe('Positive case scenerios', () => {
   let request: supertest.SuperTest<supertest.Test>
 
   beforeAll(() => {
@@ -33,15 +33,15 @@ describe('API integration test', () => {
   })
 })
 
-describe('API integration test', () => {
+describe('Negative case scenerios', () => {
   let request: supertest.SuperTest<supertest.Test>
 
   beforeAll(() => {
     request = supertest(app)
   })
 
-  describe('first test', () => {
-    it('returns 200 for get categories with id', async () => {
+  describe('first negative test', () => {
+    it('returns a text for get category id that does not exist', async () => {
       const response = await request
         .get('/api/categories?id=11')
         .send({
